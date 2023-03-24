@@ -16,11 +16,11 @@
 .calculator {
 	background-color: #22252D;
 	width: 100%;
-	max-width: 375px;
-	min-height: 640px;
 	display: flex;
 	flex-direction: column;
 	border-radius: 2.5rem;
+	max-width: 375px;
+	min-height: 640px;
 	overflow: hidden;
     border: 4px solid rgb(22, 39, 189)
 }
@@ -28,12 +28,13 @@
 .display {
 	min-height: 200px;
 	padding: 1.5rem;
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
 	color: white;
 	text-align: right;
 	flex: 1 1 0%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	
 }
 
 .display .content {

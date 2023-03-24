@@ -5,6 +5,8 @@ const display_output = document.querySelector('.display .output');
 let input = "";
 let last_key = null; 
 
+
+
 for (let key of keys) {
 	const value = key.dataset.key;
 
@@ -79,7 +81,7 @@ function CleanOutput (output) {
 
 function ValidateInput (value) {
     let last_input = input.slice(-1);
-	let operators = ["+", "-", "*", "/"];
+	let operators = ["+", "-", "*", "/", "%"];
 
 	if (value == "." && last_input == ".") {
 		return false;
@@ -87,6 +89,8 @@ function ValidateInput (value) {
 
 	if (operators.includes(value)) {
 		if (operators.includes(last_input)) {
+			input = input.slice(0, -1) + value;
+			display_input.innerHTML= CleanInput(input)
 			return false;
 		} else {
 			return true;
@@ -102,7 +106,10 @@ function PerpareInput (input) {
 	for (let i = 0; i < input_array.length; i++) {
 		if (input_array[i] == "%") {
 			input_array[i] = "/100";
+
+			
 		}
+		
 	}
 
 	return input_array.join("");
